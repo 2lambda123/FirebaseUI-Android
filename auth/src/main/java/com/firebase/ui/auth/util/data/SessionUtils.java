@@ -1,5 +1,6 @@
 package com.firebase.ui.auth.util.data;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 import androidx.annotation.RestrictTo;
@@ -17,7 +18,7 @@ public class SessionUtils {
      */
     public static String generateRandomAlphaNumericString(int length) {
         StringBuilder sb = new StringBuilder();
-        Random random = new Random();
+        Random random = new SecureRandom();
         for (int i = 0; i < length; i++) {
             sb.append(VALID_CHARS.charAt(random.nextInt(length)));
         }
